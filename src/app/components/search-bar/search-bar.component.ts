@@ -8,10 +8,8 @@ import { SharedDataService } from '../../services/shared-data.service';
 })
 export class SearchBarComponent implements OnInit {
 
-  urlInput: string = ''; //ngModel
+  urlInput: string = '';
   currUrl = { url: '', bookmark: false };
-  // arr=[];
-  // url = { url: '', bookmark: false };
   msg: string;
   bookmarksArr: Array<any>;
 
@@ -19,12 +17,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.sharedData.currUrl.subscribe(url => this.currUrl = url);
     this.sharedData.bookmarksArr.subscribe(arr => this.bookmarksArr = arr);
-    // console.log(this.bookmarksArr.indexOf(this.currUrl));
-    // if (this.bookmarksArr.indexOf(this.urlInput)) {
-    // this.currUrl.bookmark = this.bookmarksArr.indexOf(this.urlInput)
-
   }
 
   onClickSearch(url: string) {
@@ -32,14 +25,12 @@ export class SearchBarComponent implements OnInit {
     if (url.includes("https://www.youtube.com/watch?v=")) {
       this.currUrl.url = url;
       for (var i = 0; i <= this.bookmarksArr.length - 1; i++) {
-        // console.log(this.bookmarksArr[i]);
         if (this.bookmarksArr[i].url == url) {
           this.currUrl.bookmark = true;
         }
       }
       this.sharedData.changeUrl(this.currUrl);
     } else { this.msg = "The link is not correct"; }
-    // console.log(this.currUrl);
   }
 
   onClickBookmark(url: string) {
