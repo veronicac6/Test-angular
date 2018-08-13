@@ -3,12 +3,12 @@
     <div class="input-group">
       <input type="text" class="form-control input-lg" [(ngModel)]="urlInput" name="urlInput">
       <div class="input-group-append">
-        <button type="button" (click)="onClickBookmark(this.urlInput)" class="btn btn-danger" id="btnBookmark">
-          <i class="fas fa-bookmark"  *ngIf="this.currUrl.bookmark"></i>
-          <i class="far fa-bookmark" *ngIf="!this.currUrl.bookmark"></i>
+        <button type="button" (click)="onClickBookmark(this.urlInput)" class="btn btn-danger" id="btnBookmark" [disabled]="urlInput!=currUrl.url">
+          <i class="fas fa-bookmark"  *ngIf="currUrl.bookmark"></i>
+          <i class="far fa-bookmark" *ngIf="!currUrl.bookmark"></i>
         </button>
         <button type="button" (click)="onClickSearch(this.urlInput)" class="btn btn-success" id="btnSearh"> <i class="fas fa-search"></i></button>
-      </div>
+      </div><br>
     </div>
   </div>
   <div class="row" *ngIf="msg">
