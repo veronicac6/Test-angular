@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h6>Youtube Video</h6>
+    </div>
+    <div class="card-body">
+      <div style="position:relative;height:0;padding-bottom:56.25%">
+        <ng-container *ngIf="URL">
+        <iframe width="420" height="315" [src]="getEmbedUrl(URL)" frameborder="0"
+        style="position:absolute; width:100%;height:100%;left:0;"></iframe>
+      </ng-container>
+      </div>
+      <!-- <p>{{URL}}</p> -->
+    </div>
+
+  </div>
+  <small>History in localStorage: {{lsHistory}} </small><br>
+  <small>Bookmarks in localStorage: {{lsBookmarks}}</small>
+</div>

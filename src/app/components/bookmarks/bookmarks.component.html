@@ -1,0 +1,17 @@
+<div class="padding">
+  <div class="card">
+    <div class="card-header">
+      Bookmarks ({{lng}})
+    </div>
+    <ul class="list-group list-group-flush" *ngFor="let element of bookmarksArr">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-12 col-lg-12">
+            <button type="button" class="btn btn-link btn-block" (click)="onClickUrl(element)" name="button" style="width:100%; white-space: normal;
+      display:block;">{{element.url}}</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
